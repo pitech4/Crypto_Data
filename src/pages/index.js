@@ -6,6 +6,7 @@ import SearchInput from '../SearchInput/SearchInput'
 import CoinTable from '../components/CoinTable/CoinTable'
 
 export default function Home({name}) {
+
   return (
     <Layout>
       <div className={styles.counts}>
