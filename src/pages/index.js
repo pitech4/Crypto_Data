@@ -4,16 +4,26 @@ import Layout from '../components/layout'
 import styles from '../styles/Home.module.css'
 import SearchInput from '../SearchInput/SearchInput'
 import CoinTable from '../components/CoinTable/CoinTable'
+import { useState } from 'react'
 
 export default function Home({name}) {
+
+  const [keyword, setKeyword] = useState('');
+
+  const filteredCoins = name.filter(n=>n.name.toLowerCase().includes(keyword))
+
+  const onInputChange = (e) => {
+    e.preventDefault()
+    setKeyword(e.target.value.toLowerCase())
+  }
 
   return (
     <Layout>
       <div className={styles.counts}>
         Found {name.length} coins
       </div>
-      < SearchInput placeholder="Filter by name" />
-      <CoinTable name={name} />
+      < SearchInput placeholder="Filter by name" onChange={onInputChange} />
+      <CoinTable name={filteredCoins} />
     </Layout>
   )
 }

@@ -1,0 +1,32 @@
+.overview_panel img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border-radius: 4px;
+}
+
+.overview_panel {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-light);
+}
+
+.overview_name {
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 5px;
+}
+
+.overview_details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    text-align: center;
+}
+
+.overview_label {
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}

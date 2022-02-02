@@ -1,6 +1,7 @@
 import { KeyboardArrowDownRounded, KeyboardArrowUpRounded } from "@material-ui/icons";
 import styles from "./CoinTable.module.css"
 import { useState } from "react";
+import Link from "next/Link";
 
 const orderBy = (name, value, direction) => {
     if (direction === 'asc') {
@@ -70,10 +71,12 @@ const CoinTable = ({name}) => {
         </div>
 
         {orderedCoins.map((n) => (
-        <div className={styles.row}>
+        <Link href={`./coin/${n.id}`}>
+            <div className={styles.row}>
             <div className={styles.name}>{n.name}</div>
-            <div className={styles.marketcap}>{n.market_cap}</div>
+            <div className={styles.marketcap}>${n.market_cap}</div>
         </div>
+        </Link>
         ))}
     </div>
     )
