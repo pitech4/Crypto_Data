@@ -1,7 +1,7 @@
 import { KeyboardArrowDownRounded, KeyboardArrowUpRounded } from "@material-ui/icons";
 import styles from "./CoinTable.module.css"
 import { useState } from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 const orderBy = (name, value, direction) => {
     if (direction === 'asc') {
